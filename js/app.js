@@ -1,21 +1,39 @@
 // variables
-let time= 45;
-const timer = setInterval(function(){
-    time--;
-    countDown.textContent= `Time:${time}`
-    if(time<=0){
-        time = 0;
-        clearInterval(timer);
-        message.textContent= `Time's Up :(`
+let gameActive = true
+let time= 30;
+let matchTotal= 0
+let matchSets=[]
+let matchElements=[]
 
+// constonants 
+const countDown=document.querySelector("#timer")
+const memory=document.querySelector(".memory-container")
+const match=document.querySelector("#match")
+const message=document.querySelector("#message")
+const flip = document.querySelectorAll(".flipped")
+const cards = document.querySelectorAll('.cards');
+const cardFront=document.querySelectorAll(".card-front")
+const cardBack=document.querySelectorAll(".card-back")
 
-
-    }
-},1000);
-
+//functions
 
 function flipCard(event) {
+    //timer
+    if(!gameActive) return;
+    const timer= setInterval(function(){
+        if(!gameActive) return;
+        time--;
+        countDown.textContent= `Time:${time}`
+        if(time<=0){
+            time = 0;
+            clearInterval(timer);
+            gameActive = false;
+            message.textContent= `Time's Up :(`
     
+    
+    
+        }
+    },1000);
    event.currentTarget.classList.add("flipped");
 // Step 1: Get the parent element of the clicked image
 const cardFront = event.target.closest('div');
@@ -41,31 +59,10 @@ function unFlip (element){
     console.log(element)
    element.classList.remove("flipped")
 }
-//constonants
 
-
-//functions
-
-const countDown=document.querySelector("#timer")
-const memory=document.querySelector(".memory")
-const match=document.querySelector("#match")
-const message=document.querySelector("#message")
-const flip = document.querySelectorAll(".flipped")
-const cards = document.querySelectorAll('.cards');
-    cards.forEach(card => {
-        card.addEventListener('click', flipCard)
-});
-    
-   
-    const cardFront=document.querySelectorAll(".card-front")
-    const cardBack=document.querySelectorAll(".card-back")
-
-let matchTotal= 0
-
-let matchSets=[]
-let matchElements=[]
 
     function match1() {
+        if(!gameActive) return;
  const cardImg1= matchSets[0]
  const cardImg2= matchSets[1]
  //console.log(matchSet[0])
@@ -75,22 +72,21 @@ let matchElements=[]
             
         }
         
-        
          else{
 
-            setTimeout(() => {
+            //setTimeout(() => {
             unFlip(matchElements[0]);
             unFlip(matchElements[1]);
-            }, 1500);
-            
-         
+            //}, 1500);
             
             
                
     }; 
     if( matchTotal=== 6){
         message.textContent= "You Win!!!!"
+        gameActive = false;
     }
+    //else{ message.textContent= "Try Again!"}
     matchSets=[]
     matchElements=[]
         }
@@ -104,19 +100,24 @@ Array.from(cards).toSorted(() => Math.random()- 0.5).forEach((sort=>{
     memory.append(sort)
 }))
 
-//timer
 
 
 //reset
 function resetGame(){
     
 
+
+
+
     
 
 }
 
- document.querySelector("#resetButton").addEventListener("click",resetGame)
+ 
 
 
 //addEventListeners
-
+cards.forEach(card => {
+    card.addEventListener('click', flipCard)
+});
+ocument.querySelector("#resetButton").addEventListener("click",resetGame)

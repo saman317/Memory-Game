@@ -7,7 +7,15 @@ body{
 h1{
     color: blueviolet;
 }
-.memory{
+
+h2{
+    color:blue
+}
+
+h3{
+    color:rgb(139, 102, 241)
+}
+.memory-container{
     display:grid;
     grid-template-columns: repeat(4,2fr);
     column-gap: 10px;
@@ -51,4 +59,8 @@ backface-visibility: hidden;
     transform-style: preserve-3d;
     transition: transform 0.8s;
     perspective: 1000px;
+}
+
+#resetButton{
+
 }

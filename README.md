@@ -22,6 +22,8 @@ Some of the websites I utilized to help with coding include:
 
 * [w3schools](https://www.w3schools.com/)
 
+* [sheCodes](https://www.shecodes.io/)
+
 
 ## Technologies Used
 
