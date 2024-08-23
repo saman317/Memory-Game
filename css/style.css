@@ -1,4 +1,5 @@
 
+
 body{
     text-align:center;
 
@@ -25,7 +26,7 @@ h1{
 }
 
 
- .brownie, .pie, .donut, .churros, .creme-brulee, .icecream{
+ .brownie, .pie, .donut, .churros, .creme-brulee, .icecream, .chocolate{
     width:120px;
     height:120px;
 }
@@ -51,5 +52,3 @@ backface-visibility: hidden;
     transition: transform 0.8s;
     perspective: 1000px;
 }
-
-
