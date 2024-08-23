@@ -1,6 +1,21 @@
 // variables
+let time= 45;
+const timer = setInterval(function(){
+    time--;
+    countDown.textContent= `Time:${time}`
+    if(time<=0){
+        time = 0;
+        clearInterval(timer);
+        message.textContent= `Time's Up :(`
+
+
+
+    }
+},1000);
+
 
 function flipCard(event) {
+    
    event.currentTarget.classList.add("flipped");
 // Step 1: Get the parent element of the clicked image
 const cardFront = event.target.closest('div');
@@ -14,10 +29,10 @@ const image = cardBack.querySelector('img');
 // Get the alt attribute of the creme-brulee image
 const imgAlt = image.getAttribute('alt');
 
-  matchSet.push(imgAlt)
+  matchSets.push(imgAlt)
   matchElements.push(event.currentTarget)
 console.log(imgAlt)
-if(matchSet.length === 2){
+if(matchSets.length === 2){
     match1()
 }
 
@@ -31,7 +46,7 @@ function unFlip (element){
 
 //functions
 
-
+const countDown=document.querySelector("#timer")
 const memory=document.querySelector(".memory")
 const match=document.querySelector("#match")
 const message=document.querySelector("#message")
@@ -47,12 +62,12 @@ const cards = document.querySelectorAll('.cards');
 
 let matchTotal= 0
 
-let matchSet=[]
+let matchSets=[]
 let matchElements=[]
 
     function match1() {
- const cardImg1= matchSet[0]
- const cardImg2= matchSet[1]
+ const cardImg1= matchSets[0]
+ const cardImg2= matchSets[1]
  //console.log(matchSet[0])
         if (cardImg1 === cardImg2){
             matchTotal ++
@@ -62,9 +77,13 @@ let matchElements=[]
         
         
          else{
-            
+
+            setTimeout(() => {
             unFlip(matchElements[0]);
             unFlip(matchElements[1]);
+            }, 1500);
+            
+         
             
             
                
@@ -72,7 +91,7 @@ let matchElements=[]
     if( matchTotal=== 6){
         message.textContent= "You Win!!!!"
     }
-    matchSet=[]
+    matchSets=[]
     matchElements=[]
         }
     
@@ -90,8 +109,8 @@ Array.from(cards).toSorted(() => Math.random()- 0.5).forEach((sort=>{
 
 //reset
 function resetGame(){
-    shuffleCards();
     
+
     
 
 }
