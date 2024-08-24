@@ -82,7 +82,6 @@ const self= this
         
          else{
 
-            console.log("Time Out!")
            
             unFlip(matchElements[0]);
             unFlip(matchElements[1]);
