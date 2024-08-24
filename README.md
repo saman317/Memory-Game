@@ -4,7 +4,7 @@
 
 I chose to do the memory game, because it's something that I've personally enjoyed playing. 
 
-The theme of the game is dessert related with a set of *12 cards* and *6 matches*. 
+The theme of the game is all things dessert with a set of *12 cards* and *6 matches*. 
 
 ![CodePart1](image.png)
 ![CodePart2](image-1.png)
