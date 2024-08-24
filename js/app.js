@@ -68,7 +68,6 @@ function unFlip (element){
    element.classList.remove("flipped")
 }
 
-const self= this
     function match1() {
         if(!gameActive) return;
  const cardImg1= matchSets[0]
