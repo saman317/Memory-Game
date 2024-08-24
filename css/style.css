@@ -27,19 +27,8 @@ body{
     box-sizing:border-box;
     
 
-
-}
-h1{
-    color: blueviolet;
 }
 
-h2{
-    color:blue
-}
-
-h3{
-    color:rgb(139, 102, 241)
-}
 .memory-container{
     display:grid;
     grid-template-columns: repeat(4,1fr);
@@ -48,59 +37,7 @@ h3{
     justify-content: center;
     max-width:max-content;
     
-    
-    
-}
-.card-front, .card-back {
-    position: relative; /* Stack elements on top of each other */
-     /* Ensure they cover the container */
-     /* Hide the back face when turned */
-}
 
-
-.card-front{
-    background: linear-gradient(90deg, rgb(115, 240, 252) 0%, rgb(139, 102, 241) 100%);
-    color: blueviolet;
-    
-   
-}
-
-
- .brownie, .pie, .donut, .churros, .creme-brulee, .icecream, .chocolate{
-    width:120px;
-    height:120px;
-}
-
-.card-back{
- border: 2px solid blueviolet;
- transform: rotateY(180deg);
-backface-visibility: hidden;
-
-    
-
-
-}
-
-.flipped{
-    backface-visibility: hidden;
-    transform:rotateY(180deg)
-} 
-
-.cards{
-    position:relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-    perspective: 1000px;
-}
-
-#resetButton{
-    background-color: transparent;
-color:blueviolet;
-border: 2px solid blueviolet;
-margin: 5px;
-width: 75px;
-height:50px;
-font-size: 20px;
 }
 
 .card-front, .card-back {
