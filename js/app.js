@@ -38,36 +38,28 @@ function timeSet(){
 }
 
 function flipCard(event) {
-    //timer
     if(gameActive=== false)return;
     if(numberFlipped===0){
         timeSet();
         numberFlipped++
     }
-  
 
    event.currentTarget.classList.add("flipped");
-// Step 1: Get the parent element of the clicked image
+
 const cardFront = event.target.closest('div');
   console.log(event.target)
-// Step 2: Get the next sibling element of the parent element
 const cardBack = cardFront.nextElementSibling;
 console.log(cardBack)
-// Step 3: Find the image with the class 'creme-brulee' in the next sibling element
 const image = cardBack.querySelector('img');
-
-// Get the alt attribute of the creme-brulee image
 const imgAlt = image.getAttribute('alt');
 
   matchSets.push(imgAlt)
   matchElements.push(event.currentTarget)
 console.log(imgAlt)
 if(matchSets.length === 2){
-   // match1()
     setTimeout(() => {
-        //console.log(self.matchElements)
             match1();
-            }, 1000);
+            }, 500);
 }
 
 }
@@ -91,11 +83,10 @@ const self= this
          else{
 
             console.log("Time Out!")
-           // setTimeout(() => {
-      //  console.log(self.matchElements)
+           
             unFlip(matchElements[0]);
             unFlip(matchElements[1]);
-          //  }, 1500);
+          
             
             
                
@@ -104,16 +95,13 @@ const self= this
         message.textContent= "You Win!!!!"
         gameActive = false;
     }
-    //else{ message.textContent= "Try Again!"}
+    
     matchSets=[]
     matchElements=[]
         }
     
    
-    //shuffle cards
  function render (){memory.innerHTML='';
-//memory.append(...cards.toSorted(() => Math.random()- 0.5));
-
 Array.from(cards).toSorted(() => Math.random()- 0.5).forEach((sort=>{
     console.log(sort)
     if(sort.classList.contains("flipped")){
@@ -138,19 +126,11 @@ function resetGame(){
         clearInterval(timer);
         countDown.textContent= `Time:${time}`
         numberFlipped=0
+        message.textContent= " "
 
         
-    }
+}
 
-
-
-
-
-    
-
-
-
- 
 
 
 //addEventListeners

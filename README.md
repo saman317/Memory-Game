@@ -2,11 +2,17 @@
 
 ***Sweet Memory Game***
 
-
-
 I chose to do the memory game, because it's something that I've personally enjoyed playing. 
 
 The theme of the game is dessert related with a set of *12 cards* and *6 matches*. 
+
+![CodePart1](image.png)
+![CodePart2](image-1.png)
+![CodePart3](image-2.png)
+![CodePart4](image-3.png)
+
+
+
 
 ## Getting Started
 
